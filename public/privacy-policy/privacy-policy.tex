@@ -1,0 +1,260 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+\setlist[itemize]{leftmargin=1.4em,itemsep=0.2em,topsep=0.3em}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=0.2em,topsep=0.3em}
+
+\newcommand{\AppName}{Memiry}
+\newcommand{\PolicyDate}{April 24, 2026}
+\newcommand{\CompanyName}{Memiry, Inc.}
+\newcommand{\CompanyAddress}{500 8th Avenue FRNT 3 \#1608\\Manhattan, NY 10018\\United States}
+\newcommand{\PrivacyEmail}{\href{mailto:Sammy.kao@tufts.edu}{Sammy.kao@tufts.edu}}
+\newcommand{\SupportContact}{\href{mailto:Sammy.kao@tufts.edu}{Sammy.kao@tufts.edu}}
+\newcommand{\MinimumAge}{You must be at least 13 years old to use Memiry.}
+\newcommand{\RetentionAccount}{We retain account, profile, and preference data while your account is active and for up to 30 days after account deletion, unless a longer retention period is required by law or reasonably necessary to enforce our agreements, resolve disputes, or protect the service.}
+\newcommand{\RetentionContent}{We retain chats, memories, screenshots, transcripts, and related backups until you delete them or close your account, and for up to 30 days after deletion from live systems while deletion requests finish processing and backups expire, unless a longer retention period is required by law or reasonably necessary to protect the service.}
+\newcommand{\RetentionBilling}{We aim to delete subscription-related records within 30 days after account deletion where feasible, but may retain billing, tax, accounting, audit, chargeback, or fraud-prevention records longer when required by law or reasonably necessary for compliance or dispute resolution.}
+\newcommand{\RetentionLogs}{We retain security, abuse-prevention, and server logs for up to 30 days, unless a longer retention period is required by law or reasonably necessary to investigate incidents, enforce our agreements, or protect the service.}
+\newcommand{\AIVendors}{We may use AI service providers acting on our behalf, but we do not publish a provider-by-provider AI subprocessor list in this policy.}
+
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+\hypersetup{
+  pdftitle={Memiry Privacy Policy},
+  pdfauthor={\CompanyName}
+}
+
+\begin{document}
+
+{\LARGE \textbf{\AppName\ Privacy Policy}}\\
+\textbf{Effective date:} \PolicyDate\\
+\textbf{Last updated:} \PolicyDate
+
+\vspace{0.75em}
+
+\section*{1. Scope and Overview}
+
+This Privacy Policy explains how \CompanyName\ ("Memiry," "we," "us," or "our") collects, uses, discloses, stores, and otherwise processes personal information when you use:
+
+\begin{itemize}
+  \item the \AppName\ iOS application;
+  \item the \AppName\ custom keyboard extension;
+  \item the Memiry website and any web pages that link to this Privacy Policy; and
+  \item related support, billing, authentication, and integration services we provide.
+\end{itemize}
+
+This policy is written to reflect the current Memiry product as shown in the repository used to prepare this draft, including account authentication, saved memories, profile preferences, recent chat access from the keyboard extension, optional screenshot sharing, optional voice input, third-party app connections, and iOS subscription handling through Apple and RevenueCat.
+
+\textbf{Important:} We do \textbf{not} sell personal information. We also do \textbf{not} share personal information for cross-context behavioral advertising.
+
+\section*{2. Categories of Personal Information We Collect}
+
+\small
+\begin{longtable}{L{0.19\textwidth} L{0.28\textwidth} L{0.25\textwidth} L{0.2\textwidth}}
+\toprule
+\textbf{Category} & \textbf{What it includes} & \textbf{How we use it} & \textbf{Who may receive it} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Category} & \textbf{What it includes} & \textbf{How we use it} & \textbf{Who may receive it} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Account and identifier data &
+Name, email address, phone number, account ID, sign-in and sign-up details, authentication session data, and marketing opt-in status. &
+Create and secure your account, sign you in, recover access, maintain your session across the app and keyboard, and communicate with you. &
+Supabase or other authentication and infrastructure providers we use, and service providers acting on our behalf. \\
+
+Profile and preference data &
+Profile fields such as first name, last name, phone number, timezone, response-depth preferences, tone preferences, and onboarding status. &
+Personalize the product, apply your settings, complete onboarding, and support account management. &
+Infrastructure providers acting on our behalf and, where necessary, AI providers processing requests for us. \\
+
+Chats, memories, and other user content &
+Prompts, messages, assistant responses, saved memories, profile snapshot fields, chat titles, free-form memory submissions, and any other content you intentionally submit to Memiry. &
+Provide the core service, save context, retrieve past threads, generate responses, and support memory features. &
+AI and infrastructure providers acting on our behalf, plus connected services when you direct Memiry to use them. \\
+
+Screenshots and images &
+Screenshots or images you choose to import or share for AI context. &
+Read, summarize, analyze, or otherwise process the screen context you ask Memiry to handle. &
+AI and infrastructure providers acting on our behalf. \\
+
+Voice and speech data &
+Microphone audio, speech-recognition transcripts, and related permission state when you use voice input. &
+Transcribe your speech, turn voice into messages, and support voice-driven interaction. &
+Apple speech-recognition services when required for transcription, plus Memiry and providers acting on our behalf after the resulting request reaches our service. \\
+
+Connected-account and integration data &
+Authorization codes, OAuth tokens, refresh tokens, selected scopes, provider account labels, credentials or connection metadata you choose to submit, and data returned from connected providers when you ask Memiry to use them. &
+Connect external services, keep those connections active, and perform the actions or retrieval requests you direct us to perform. &
+The connected provider you choose to use, Memiry infrastructure, and service providers acting on our behalf. \\
+
+Subscription and transaction data &
+App user ID, product or entitlement identifiers, subscription status, renewal or expiration dates, store, environment, management URL, and RevenueCat or webhook status data. Apple processes payment-card information directly and does not provide full payment-card numbers to us. &
+Activate and manage subscriptions, restore purchases, confirm entitlement status, prevent abuse, and maintain billing records. &
+Apple, RevenueCat, and our infrastructure or accounting providers as needed. \\
+
+Technical, device, and security data &
+IP address, request timestamps, device or OS details, app version, crash or error information, abuse-prevention data, and local session state needed to keep the app and keyboard working. &
+Operate, secure, troubleshoot, monitor, debug, and improve the service. &
+Hosting, logging, monitoring, and security providers acting on our behalf. \\
+\end{longtable}
+\normalsize
+
+\section*{3. Sources of Personal Information}
+
+We collect personal information from the following sources:
+
+\begin{itemize}
+  \item \textbf{Directly from you:} when you create an account, sign in, complete your profile, save a memory, send a chat, use the keyboard extension, connect a third-party app, upload a screenshot, turn on voice input, subscribe, or contact support.
+  \item \textbf{Automatically from your use of the service:} when the app, keyboard, or our backend records session state, request metadata, security logs, crash information, or device and network information needed to operate the product.
+  \item \textbf{From Apple and platform services:} such as App Store billing information, speech recognition services, and iOS permission states.
+  \item \textbf{From service providers acting on our behalf:} such as authentication, hosting, storage, security, and subscription-management providers.
+  \item \textbf{From connected providers at your direction:} when you connect Gmail, Google Calendar, Google Docs, Slack, Spotify, Resy, Strava, Outlook, Notion, Linear, Todoist, Uber, or other providers we may support, and then ask Memiry to retrieve data or perform actions through them.
+\end{itemize}
+
+\section*{4. How We Use Personal Information}
+
+We use personal information to:
+
+\begin{itemize}
+  \item provide, operate, and maintain the app, keyboard extension, website, and related services;
+  \item authenticate users and keep the main iOS app and keyboard extension signed in through shared secure storage;
+  \item process chats, memories, screenshots, voice requests, and connected-tool actions;
+  \item personalize your experience using your profile, preferences, and saved context;
+  \item process, confirm, and restore subscriptions and enforce paywall access;
+  \item monitor usage, debug failures, detect abuse, protect the service, and investigate security incidents;
+  \item communicate with you about support, account, billing, product, and legal matters;
+  \item comply with law, enforce agreements, protect rights and safety, and support corporate transactions; and
+  \item de-identify or aggregate information where permitted by law for internal analytics, product improvement, or reporting.
+\end{itemize}
+
+\section*{5. Keyboard Extension, Permissions, and Local Storage}
+
+\subsection*{5.1 Custom Keyboard and Full Access}
+
+Memiry includes a custom iOS keyboard extension. Apple requires a custom keyboard to request ``Full Access'' (also called open access) if it needs network access or a shared container with its containing app. Memiry uses this capability so the keyboard can:
+
+\begin{itemize}
+  \item reach Memiry services over the network;
+  \item load recent chats and messages for the signed-in user; and
+  \item share authentication state with the main app through secure shared storage.
+\end{itemize}
+
+The keyboard stores account-session information in the iOS keychain and app-group shared storage so the app and keyboard can stay synchronized. Text you enter into the Memiry keyboard's own composer and choose to submit may be sent to Memiry so the service can respond. We do not intentionally use the keyboard to collect text from secure text fields or from contexts where iOS does not permit custom keyboards to operate.
+
+\subsection*{5.2 Photos and Screenshots}
+
+If you grant Photos access, you may choose to share screenshots or images with Memiry so the service can analyze on-screen context. This permission is optional, and declining it may limit screenshot-based features only.
+
+\subsection*{5.3 Microphone and Speech Recognition}
+
+If you turn on voice input, Memiry requests microphone and speech-recognition permission. Apple states that speech recognition may involve sending captured audio to Apple's servers for processing. Memiry then uses the resulting transcript to generate the message or request you intended to send.
+
+\section*{6. How We Disclose Personal Information}
+
+We may disclose personal information in the following circumstances:
+
+\begin{itemize}
+  \item \textbf{Service providers and processors.} We use providers for hosting, authentication, cloud infrastructure, storage, logging, subscription management, and AI-powered processing. Based on the current repository, this includes Supabase for authentication and backend infrastructure and RevenueCat for subscription management. \AIVendors
+  \item \textbf{Apple and platform services.} Apple may receive information necessary for App Store purchases, subscription restoration, speech recognition, or other iOS platform features you choose to use.
+  \item \textbf{Connected providers at your direction.} When you connect a third-party service and ask Memiry to use it, we disclose the data necessary to authenticate with that provider and complete the task you requested.
+  \item \textbf{Legal and safety reasons.} We may disclose information if reasonably necessary to comply with law, respond to lawful process, protect rights or safety, investigate fraud or abuse, or enforce our agreements.
+  \item \textbf{Corporate transactions.} We may disclose information in connection with a merger, acquisition, financing, reorganization, bankruptcy, asset sale, or similar transaction, subject to applicable law.
+\end{itemize}
+
+\textbf{No sale or advertising share.} In the preceding 12 months, we have not sold personal information and have not shared personal information for cross-context behavioral advertising.
+
+\section*{7. Data Retention}
+
+We retain personal information only for as long as reasonably necessary for the purposes described in this policy, including to provide the service, maintain requested records, comply with law, resolve disputes, and enforce agreements. Our current retention approach is:
+
+\begin{itemize}
+  \item \textbf{Account, profile, and preference data:} \RetentionAccount
+  \item \textbf{Chats, memories, screenshots, transcripts, and related backups:} \RetentionContent
+  \item \textbf{Connected-account credentials, tokens, and connection metadata:} retain while the connection remains active, until you disconnect it, or until it expires, and for up to 30 days after disconnection or deletion while backup copies expire, unless a longer retention period is required by law or reasonably necessary for security, fraud-prevention, or dispute resolution.
+  \item \textbf{Subscription, tax, accounting, and audit records:} \RetentionBilling
+  \item \textbf{Security, abuse-prevention, and server logs:} \RetentionLogs
+\end{itemize}
+
+Where feasible, we may delete, aggregate, or de-identify information sooner. De-identified or aggregated information may be retained longer if it can no longer reasonably identify you.
+
+\section*{8. Your Choices and Privacy Rights}
+
+Depending on where you live and subject to applicable law, you may have the right to:
+
+\begin{itemize}
+  \item access or know the personal information we maintain about you;
+  \item correct inaccurate personal information;
+  \item delete personal information, subject to legal exceptions;
+  \item receive a portable copy of certain personal information;
+  \item disconnect third-party providers and revoke connected access;
+  \item manage app permissions such as Photos, Microphone, and Speech Recognition in iOS Settings;
+  \item unsubscribe from marketing communications; and
+  \item opt out of sale or sharing of personal information for cross-context behavioral advertising, although Memiry does not currently sell or share personal information in that way.
+\end{itemize}
+
+If you want to exercise privacy rights or submit a data request, contact us at \PrivacyEmail. Because we operate online and have a direct relationship with our users, we currently use this email address as our designated privacy request method where permitted by applicable law.
+
+If we need to verify your identity before honoring a request, we may ask for information reasonably necessary to do so. We will respond within the time required by applicable law.
+
+Memiry also lets users manage some data directly inside the product, including editing profile information, deleting memories, deleting chats, changing preferences, and disconnecting third-party providers.
+
+\section*{9. California Notice}
+
+If you are a California resident, the categories listed in Section 2 describe the categories of personal information we collected in the preceding 12 months. The sources of that information are summarized in Section 3. The business and commercial purposes for collecting and using that information are summarized in Section 4.
+
+We disclose personal information for business purposes to service providers, processors, connected providers at your direction, Apple, RevenueCat, and other recipients described in Section 6.
+
+California residents may have the rights to know, access, correct, delete, opt out of sale or sharing, limit certain uses of sensitive personal information, and receive equal service and price even if they exercise privacy rights. Memiry does not sell personal information and does not share personal information for cross-context behavioral advertising.
+
+To the extent we process sensitive personal information, we use it only as reasonably necessary to provide the service, maintain security, prevent fraud, debug, comply with law, and for other purposes permitted by applicable law.
+
+\section*{10. Do Not Track and Cross-Site Tracking}
+
+Memiry does not currently use personal information collected through its services for cross-context behavioral advertising. Memiry also does not currently provide a separate technical response to browser ``Do Not Track'' signals. If our practices change, we will update this policy.
+
+We do not knowingly allow third parties to collect personal information through Memiry for their own cross-site targeted advertising purposes as described in this policy.
+
+\section*{11. Children's Privacy}
+
+Memiry is not intended for children under 13, and we do not knowingly collect personal information from children under 13. \MinimumAge
+
+If you learn that a child has provided personal information to Memiry in violation of applicable law, contact us at \PrivacyEmail\ so we can investigate and take appropriate action.
+
+\section*{12. International Transfers}
+
+Memiry may store or process personal information in the United States and other countries where we or our service providers operate. Those locations may have privacy laws that differ from the laws where you live.
+
+\section*{13. Security}
+
+We use reasonable administrative, technical, and organizational safeguards designed to protect personal information. These measures include secure account-session storage on-device, access controls, and service-provider protections appropriate to the nature of the data we process. No system is completely secure, and we cannot guarantee absolute security.
+
+\section*{14. Changes to This Privacy Policy}
+
+We may update this Privacy Policy from time to time. When we do, we will revise the ``Last updated'' date at the top of this document and, where required, provide additional notice through the app, website, or other appropriate channel.
+
+\section*{15. Contact Information}
+
+If you have questions about this Privacy Policy or want to submit a privacy request, contact:
+
+\textbf{\CompanyName}\\
+\CompanyAddress\\
+\PrivacyEmail\\
+\SupportContact
+
+\end{document}

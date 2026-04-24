@@ -32,6 +32,14 @@ export function SiteFooter() {
             ))}
           </nav>
           <AppStoreButton label="Download Memiry" subtle />
+          <div className="flex flex-wrap items-center gap-4 text-sm text-stone-500">
+            <Link
+              className="transition hover:text-[var(--ink)] hover:underline"
+              href="/privacy-policy"
+            >
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
