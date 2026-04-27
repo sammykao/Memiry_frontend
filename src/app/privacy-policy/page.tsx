@@ -15,17 +15,6 @@ export default function PrivacyPolicyPage() {
         <h1 className="mt-4 font-display text-5xl leading-none tracking-[-0.05em] text-[var(--ink)] sm:text-6xl">
           Privacy Policy
         </h1>
-        <p className="mt-4 text-base leading-7 text-stone-600">
-          The current policy is rendered below from the PDF stored in this
-          repository.
-        </p>
-        <p className="mt-3 text-sm leading-6 text-stone-500">
-          After you render the LaTeX file into{" "}
-          <code className="rounded bg-white/70 px-1.5 py-0.5 text-[0.8rem] text-[var(--ink)]">
-            privacy-policy.pdf
-          </code>
-          , this page will display it automatically.
-        </p>
         <a
           className="mt-6 inline-flex items-center justify-center rounded-full border border-[var(--line)] bg-white/76 px-5 py-2.5 text-sm font-semibold text-[var(--ink)] transition hover:bg-white"
           href="/privacy-policy/privacy-policy.pdf"

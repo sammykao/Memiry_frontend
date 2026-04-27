@@ -156,7 +156,13 @@ export const memoryPageDevice: DeviceFrameContent = {
   title: "Light enough to forget about. Clear enough to trust.",
 };
 
-export const memorySignals = [
+export type MemorySignal = {
+  type: string;
+  label: string;
+  body: string;
+};
+
+export const memorySignals: readonly MemorySignal[] = [
   {
     type: "Preference",
     label: "Taste, habits, and small preferences",
@@ -174,7 +180,12 @@ export const memorySignals = [
   },
 ] as const;
 
-export const memoryWorkflow = [
+export type WorkflowStep = {
+  title: string;
+  body: string;
+};
+
+export const memoryWorkflow: readonly WorkflowStep[] = [
   {
     title: "Capture it.",
     body: "Drop in a line and let Memiry sort the memory type.",
@@ -224,7 +235,7 @@ export const integrationsRail = [
   "Default tools",
 ] as const;
 
-export const integrationFlow = [
+export const integrationFlow: readonly WorkflowStep[] = [
   {
     title: "Connect once.",
     body: "Link Google or Outlook and keep the setup out of the way.",
@@ -239,7 +250,14 @@ export const integrationFlow = [
   },
 ] as const;
 
-export const integrationCategories = [
+export type IntegrationCategory = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  apps: readonly string[];
+};
+
+export const integrationCategories: readonly IntegrationCategory[] = [
   {
     eyebrow: "Mail",
     title: "Support the next reply.",
