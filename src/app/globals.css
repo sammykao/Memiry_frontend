@@ -55,6 +55,15 @@ button {
   backdrop-filter: blur(28px);
 }
 
+.feature-panel {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.82), rgba(234, 240, 235, 0.72)),
+    rgba(255, 255, 255, 0.66);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(28px);
+}
+
 .app-pill {
   display: inline-flex;
   align-items: center;
@@ -70,36 +79,9 @@ button {
   white-space: nowrap;
 }
 
-.marquee-shell {
-  overflow: hidden;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(20px);
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  gap: 0.9rem;
-  padding: 1rem;
-  animation: marquee 28s linear infinite;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
+.app-pill-soft {
+  background: rgba(255, 255, 255, 0.52);
+  box-shadow: none;
 }
 
 @media (min-width: 640px) {
