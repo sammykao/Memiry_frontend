@@ -1,255 +1,274 @@
 export const navigationItems = [
   { href: "/", label: "Overview" },
   { href: "/memory", label: "Memory" },
-  { href: "/integrations", label: "Integrations" },
-  { href: "/download", label: "Download" },
+  { href: "/integrations", label: "Apps" },
 ] as const;
 
-export const heroMetrics = [
+type DeviceFrameContent = {
+  badge: string;
+  body: string;
+  chips: readonly string[];
+  eyebrow: string;
+  lines: readonly string[];
+  title: string;
+};
+
+type IntroContent = {
+  body: string;
+  eyebrow: string;
+  title: string;
+};
+
+type PageCtaContent = {
+  body: string;
+  buttonLabel: string;
+  eyebrow: string;
+  title: string;
+};
+
+export const homeHero = {
+  body: "Use Memiry from the keyboard, the app, or Siri. Save context, pull the right app, and keep the conversation moving.",
+  eyebrow: "Keyboard. App. Siri.",
+  secondaryCtaLabel: "See how it works",
+  title: "One agent. Three ways in.",
+} as const;
+
+export const homeHeroDevice: DeviceFrameContent = {
+  badge: "iPhone",
+  body: "Draft a reply, save a detail, or pull in the next app without breaking the thread.",
+  chips: ["Keyboard", "Memory", "Apps", "Siri"],
+  eyebrow: "Agent live",
+  lines: [
+    "Rewrite that softer.",
+    "Done. Want me to check Thursday too?",
+    "Yes. Keep it in the thread.",
+  ],
+  title: "Built for the moments where app-switching slows the thread.",
+};
+
+export const homeAccessCards = [
   {
-    label: "Chat-native",
-    value: "Keyboard first",
-    body: "Built around the place conversations already happen instead of a separate destination.",
+    eyebrow: "Keyboard",
+    title: "Stay in the thread.",
+    body: "Launch Memiry from the iPhone keyboard and keep typing.",
   },
   {
-    label: "Memory model",
-    value: "3 signal types",
-    body: "Preferences, facts, and episodes match the structure already exposed in the iOS app.",
+    eyebrow: "In app",
+    title: "Go deeper when you need to.",
+    body: "Open chats, memory, tools, and profile controls in one calm workspace.",
   },
   {
-    label: "App graph",
-    value: "7 showcased",
-    body: "The onboarding flow already highlights Gmail, Docs, Calendar, Slack, Spotify, Resy, and Strava.",
+    eyebrow: "Siri",
+    title: "Ask out loud.",
+    body: "Use Ask Memiry with Siri when your hands are busy or the keyboard is too slow.",
   },
 ] as const;
 
-export const featureColumns = [
-  {
-    eyebrow: "Chats",
-    title: "Start fast, then stay present.",
-    body: "Open the app, start a new thread, or jump into recent conversations with a composer that mirrors the in-product chat entry point.",
-    points: [
-      "Recent chat recall",
-      "Thread-first interface",
-      "Voice-ready composer",
-    ],
-  },
-  {
-    eyebrow: "Memory",
-    title: "Keep details in reach.",
-    body: "Free-form memory capture, editable records, and a profile snapshot turn scattered details into something the agent can use later.",
-    points: [
-      "Facts, preferences, and episodes",
-      "Editable profile snapshot",
-      "Keyword lookup across saved context",
-    ],
-  },
-  {
-    eyebrow: "Tools",
-    title: "Move from reply to action.",
-    body: "Connected providers make the assistant useful when plans need scheduling, notes need pulling, or a next step should happen immediately.",
-    points: [
-      "OAuth and credential-based connections",
-      "Provider-specific tool visibility",
-      "Default tools available without setup",
-    ],
-  },
-] as const;
+export const homeStoryIntro = {
+  body: "Start where you type. Save what matters. Bring in tools only when a message needs action.",
+  eyebrow: "How it works",
+  title: "A calmer way to use an agent.",
+} as const;
 
 export type StoryStep = {
-  label: string;
-  title: string;
-  body: string;
   badge: string;
+  body: string;
+  chips: readonly string[];
+  label: string;
+  lines: readonly string[];
+  previewBody: string;
   previewEyebrow: string;
   previewTitle: string;
-  previewBody: string;
-  lines: string[];
-  chips: string[];
+  title: string;
 };
 
 export const homeStorySteps: StoryStep[] = [
   {
-    label: "01. Stay inside the thread",
-    title: "Use the keyboard as the launch point.",
-    body: "The product story starts where the iOS app starts: in a chat flow that avoids app-hopping and keeps the conversation moving.",
-    badge: "Keyboard live",
-    previewEyebrow: "Conversation layer",
-    previewTitle: "Ask without losing the moment.",
-    previewBody: "Memiry lives where the message is being written, so the product feels like a quiet operator instead of a separate mode switch.",
+    badge: "Keyboard",
+    body: "Draft, ask, or follow up without bouncing to another app.",
+    chips: ["Reply", "Rewrite", "Follow-up"],
+    label: "01 Keyboard",
     lines: [
-      "Need a quick follow-up that still sounds like me.",
-      "I can draft it and keep the thread warm.",
-      "Perfect. Do it from here.",
+      "Can you make that shorter?",
+      "Here is a tighter version that still sounds like you.",
+      "Send it.",
     ],
-    chips: ["Voice", "Recent chats", "Response style"],
+    previewBody: "Type, ask, and send from the same place the conversation is already happening.",
+    previewEyebrow: "Thread live",
+    previewTitle: "Start where you type.",
+    title: "Keep the message moving.",
   },
   {
-    label: "02. Save the details",
-    title: "Capture what matters for later.",
-    body: "The memory tab already supports free-form processing plus structured edits. The site visualizes that as calm recall instead of noisy AI jargon.",
-    badge: "Memory saved",
-    previewEyebrow: "Memory layer",
-    previewTitle: "Facts, preferences, and episodes.",
-    previewBody: "Save the details that make future replies smarter without forcing the user to maintain a dashboard.",
+    badge: "Memory",
+    body: "Turn a preference, fact, or moment into context you can reuse later.",
+    chips: ["Preference", "Fact", "Episode"],
+    label: "02 Memory",
     lines: [
       "Sam prefers late lunches.",
-      "Tagged as a preference and saved.",
-      "Keep the studio deadline in there too.",
+      "Saved as a preference.",
+      "Keep Friday's deadline too.",
     ],
-    chips: ["Preference", "Fact", "Episode"],
+    previewBody: "Memiry keeps light, editable memory behind the chat instead of another inbox of notes.",
+    previewEyebrow: "Context saved",
+    previewTitle: "Save the useful part.",
+    title: "Keep what matters close.",
   },
   {
-    label: "03. Act through tools",
-    title: "Pull the right app into the message.",
-    body: "The tools tab already centers provider connections and app-level actions. The site positions that as a transition from answer to action.",
-    badge: "Connected",
-    previewEyebrow: "Tool graph",
-    previewTitle: "Reply, then take the next step.",
-    previewBody: "When a plan needs a calendar check or a reservation, the assistant can move into execution instead of stopping at text.",
+    badge: "Apps",
+    body: "When the thread needs action, bring in mail, docs, or calendar from the same flow.",
+    chips: ["Gmail", "Calendar", "Docs", "Default tools"],
+    label: "03 Apps",
     lines: [
-      "Can you check next Thursday after 6?",
-      "Calendar is clear and Resy is ready.",
-      "Book it and share the plan.",
+      "Check Thursday after 6.",
+      "Calendar is open. Want the shared doc too?",
+      "Yes. Keep it moving.",
     ],
-    chips: ["Calendar", "Docs", "Resy", "Slack"],
+    previewBody: "Connected apps stay behind the conversation until they are needed.",
+    previewEyebrow: "Action ready",
+    previewTitle: "Move from reply to action.",
+    title: "Pull in the right app.",
   },
 ];
 
-export const voiceFeatures = [
-  {
-    title: "Tone controls",
-    body: "The iOS preferences already support formal, normal, casual, humorous, and zesty defaults.",
-  },
-  {
-    title: "Response depth",
-    body: "Short, normal, informative, or detailed output settings make the assistant feel tailored before each thread.",
-  },
-  {
-    title: "Timezone aware",
-    body: "Plans and scheduling language stay grounded with built-in timezone preferences.",
-  },
-  {
-    title: "Voice IO ready",
-    body: "The native iOS codebase already includes voice input and on-device TTS hooks, so the site can credibly sell a spoken layer.",
-  },
-] as const;
+export const homeCta: PageCtaContent = {
+  body: "Keyboard first. App when needed. Siri when hands are full.",
+  buttonLabel: "Get Memiry",
+  eyebrow: "Built for iPhone",
+  title: "Keep the thread moving.",
+};
+
+export const memoryPageIntro: IntroContent = {
+  body: "Save a preference, a fact, or a moment. Review it in the app. Use it later from the keyboard.",
+  eyebrow: "Memory",
+  title: "A memory layer you can edit.",
+};
+
+export const memoryPageDevice: DeviceFrameContent = {
+  badge: "Snapshot",
+  body: "Open the app to review what stays, edit what matters, and keep the memory layer transparent.",
+  chips: ["Preference", "Fact", "Episode"],
+  eyebrow: "Memory live",
+  lines: [
+    "Preference: late lunches",
+    "Fact: dinner on May 18",
+    "Episode: send the studio link tomorrow",
+  ],
+  title: "Light enough to forget about. Clear enough to trust.",
+};
 
 export const memorySignals = [
   {
     type: "Preference",
-    label: "The things people like and dislike",
-    body: "Food preferences, social patterns, and small personal details stay ready for the next message.",
+    label: "Taste, habits, and small preferences",
+    body: "The details that make replies feel more personal.",
   },
   {
     type: "Fact",
-    label: "The details you should not lose",
-    body: "Dates, names, commitments, and context cues are stored cleanly enough to retrieve later.",
+    label: "Names, dates, and useful specifics",
+    body: "The details you want back exactly when you need them.",
   },
   {
     type: "Episode",
-    label: "The moments that still matter tomorrow",
-    body: "Loose narrative moments become a usable memory cue without turning into a notes app workflow.",
+    label: "Moments that matter again later",
+    body: "A quick memory of what happened, not a full note-taking workflow.",
   },
 ] as const;
 
 export const memoryWorkflow = [
   {
-    title: "Tell Memiry what to remember",
-    body: "The app already exposes a free-form composer for memory processing, so the site leans into fast input instead of structured forms.",
+    title: "Capture it.",
+    body: "Drop in a line and let Memiry sort the memory type.",
   },
   {
-    title: "Review the profile snapshot",
-    body: "Saved context remains inspectable through the snapshot and editable records, which makes the AI feel accountable.",
+    title: "Review it.",
+    body: "Edit the snapshot in the app so the memory layer stays accountable.",
   },
   {
-    title: "Recall it when the conversation needs it",
-    body: "Keyword search and memory summaries help the user bring the right detail back without breaking pace.",
+    title: "Recall it.",
+    body: "Bring it back when the next message needs context.",
   },
 ] as const;
 
+export const memoryCta: PageCtaContent = {
+  body: "Easy to inspect. Easy to edit. Quiet when you do not need it.",
+  buttonLabel: "Download Memiry",
+  eyebrow: "Keep it close",
+  title: "Edit memory in the app. Use it from the keyboard.",
+};
+
+export const integrationsPageIntro: IntroContent = {
+  body: "Connect the tools you already use, then call them when a message needs more than text.",
+  eyebrow: "Connected apps",
+  title: "Bring apps into the same thread.",
+};
+
+export const integrationsPageDevice: DeviceFrameContent = {
+  badge: "Connected",
+  body: "Check time, pull a doc, or line up the next move without leaving the thread.",
+  chips: ["Gmail", "Google Calendar", "Google Docs", "Outlook"],
+  eyebrow: "Apps on call",
+  lines: [
+    "Check Thursday after 6.",
+    "Calendar is open.",
+    "Grab the brief from Docs too.",
+  ],
+  title: "Connected apps that stay behind the conversation.",
+};
+
 export const integrationsRail = [
   "Gmail",
-  "Google Docs",
   "Google Calendar",
-  "Slack",
-  "Spotify",
-  "Resy",
-  "Strava",
+  "Google Docs",
+  "Outlook",
+  "Outlook Calendar",
+  "Default tools",
 ] as const;
 
 export const integrationFlow = [
   {
-    title: "Connect providers",
-    body: "The tools tab already supports OAuth and password-based flows, so the website sells a real connection model rather than a future promise.",
+    title: "Connect once.",
+    body: "Link Google or Outlook and keep the setup out of the way.",
   },
   {
-    title: "Expose tools in chat",
-    body: "Each provider surfaces its tools in one place so users understand what the assistant can actually do.",
+    title: "See what is available.",
+    body: "Memiry shows the tools each connection can expose in chat.",
   },
   {
-    title: "Execute without leaving the thread",
-    body: "Calendar checks, notes retrieval, and lightweight actions stay attached to the conversation instead of opening a second workflow.",
+    title: "Run the next step.",
+    body: "Check time, pull a reference, or move the thread forward.",
   },
 ] as const;
 
 export const integrationCategories = [
   {
-    eyebrow: "Planning",
-    title: "Scheduling and timing",
-    body: "Calendar-aware actions give Memiry a useful role when the next step is about time, availability, or coordination.",
-    apps: ["Google Calendar", "Outlook", "Resy"],
+    eyebrow: "Mail",
+    title: "Support the next reply.",
+    body: "Bring inbox context into the thread when you need it.",
+    apps: ["Gmail", "Outlook"],
   },
   {
-    eyebrow: "Knowledge",
-    title: "Notes and documents",
-    body: "Pull a reference, grab a note, or line up a shared doc while the conversation is still active.",
-    apps: ["Google Docs", "Notion", "Linear"],
+    eyebrow: "Calendar",
+    title: "Check time in context.",
+    body: "Availability stays tied to the conversation instead of another tab.",
+    apps: ["Google Calendar", "Outlook Calendar"],
   },
   {
-    eyebrow: "Communication",
-    title: "Threads and follow-ups",
-    body: "Use connected tools to support the next message instead of manually piecing together context from separate tabs.",
-    apps: ["Gmail", "Slack", "Todoist"],
+    eyebrow: "Docs",
+    title: "Pull the reference fast.",
+    body: "Grab the shared file without dropping the conversation.",
+    apps: ["Google Docs"],
   },
   {
-    eyebrow: "Lifestyle",
-    title: "Real-world actions",
-    body: "The product positioning extends beyond text when the ask turns into a reservation, ride, workout, or plan.",
-    apps: ["Spotify", "Strava", "Uber"],
+    eyebrow: "Built in",
+    title: "Start before setup.",
+    body: "Some tools are ready without connecting anything first.",
+    apps: ["Default tools"],
   },
 ] as const;
 
-export const downloadHighlights = [
-  {
-    title: "Keyboard + app",
-    body: "Use Memiry both in the dedicated iPhone app and directly from the keyboard extension.",
-  },
-  {
-    title: "Structured memory",
-    body: "Edit memory records and profile context from the app instead of hoping the assistant remembers correctly.",
-  },
-  {
-    title: "Connected tools",
-    body: "Browse providers, connect accounts, and expose useful actions to the chat experience.",
-  },
-  {
-    title: "Direct support loop",
-    body: "The current paywall copy already positions support and feature feedback as part of the membership.",
-  },
-] as const;
-
-export const downloadQuestions = [
-  {
-    question: "What does the download button use?",
-    answer: "Every CTA reads from NEXT_PUBLIC_APP_STORE_URL so the deployment can point at the live App Store listing without hardcoding it in components.",
-  },
-  {
-    question: "Why keep the pricing page minimal?",
-    answer: "The iOS paywall already makes a single-subscription pitch. A cleaner page reduces noise and pushes users toward the install decision faster.",
-  },
-  {
-    question: "Why not copy Apple directly?",
-    answer: "The design borrows from Apple-like restraint, spacing, and glass surfaces, but keeps its own type pairing, color palette, and interaction rhythm.",
-  },
-] as const;
+export const integrationsCta: PageCtaContent = {
+  body: "Keep the thread central. Pull in apps only when they earn the space.",
+  buttonLabel: "Get Memiry",
+  eyebrow: "Action, not app hopping",
+  title: "Connect what you use. Leave the rest out.",
+};

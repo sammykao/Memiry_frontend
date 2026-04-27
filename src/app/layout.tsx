@@ -17,9 +17,17 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Memiry | Stay In Conversation",
+  title: {
+    default: "Memiry | The iPhone AI Agent",
+    template: "%s | Memiry",
+  },
   description:
-    "A Next.js marketing site for the Memiry iPhone app: memory, tools, keyboard-first AI, and a direct App Store download flow.",
+    "Memiry is an iPhone AI agent for the keyboard, the app, and Siri.",
+  icons: {
+    icon: "assets/memiry-logo.png",
+    shortcut: "assets/memiry-logo.png",
+    apple: "assets/memiry-logo.png",
+  },
 };
 
 export default function RootLayout({

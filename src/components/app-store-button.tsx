@@ -11,7 +11,7 @@ export function AppStoreButton({
 }: AppStoreButtonProps) {
   return (
     <a
-      className={`inline-flex items-center justify-center gap-3 rounded-full px-6 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 ${
+      className={`inline-flex min-h-12 w-full items-center justify-center gap-3 whitespace-nowrap rounded-full px-6 py-3 text-sm font-semibold transition duration-300 hover:-translate-y-0.5 sm:w-auto ${
         subtle
           ? "border border-[var(--line)] bg-white/76 text-[var(--ink)] hover:bg-white"
           : "bg-[var(--ink)] text-white shadow-[0_24px_60px_rgba(18,22,29,0.22)] hover:bg-black"
@@ -30,11 +30,11 @@ function AppleIcon() {
   return (
     <svg
       aria-hidden="true"
+      className="-translate-y-px h-[1.05rem] w-[1.05rem] shrink-0"
       fill="currentColor"
-      viewBox="0 0 24 24"
-      className="h-5 w-5"
+      viewBox="0 0 16 16"
     >
-      <path d="M15.59 3.26c.92-1.09 1.53-2.62 1.36-4.16-1.33.09-2.95.88-3.9 1.97-.85.97-1.59 2.52-1.39 4 1.48.11 2.99-.75 3.93-1.81ZM18.97 12.63c.02-2.24 1.84-3.31 1.92-3.36-1.05-1.54-2.67-1.75-3.24-1.78-1.38-.15-2.69.81-3.39.81-.71 0-1.81-.79-2.97-.77-1.52.02-2.94.89-3.72 2.25-1.59 2.74-.4 6.8 1.13 9 1.15 1.63 2.51 3.45 4.31 3.38 1.73-.07 2.39-1.11 4.48-1.11 2.1 0 2.69 1.11 4.52 1.07 1.87-.03 3.04-1.68 4.18-3.32.66-.94.92-1.42 1.43-2.49-4.7-1.79-4.65-6.58-4.65-6.68Z" />
+      <path d="M11.182.008C11.148-.03 9.923.023 8.857 1.18c-1.066 1.156-.902 2.482-.878 2.516s1.52.087 2.475-1.258.762-2.391.728-2.43m3.314 11.733c-.048-.096-2.325-1.234-2.113-3.422s1.675-2.789 1.698-2.854-.597-.79-1.254-1.157a3.7 3.7 0 0 0-1.563-.434c-.108-.003-.483-.095-1.254.116-.508.139-1.653.589-1.968.607-.316.018-1.256-.522-2.267-.665-.647-.125-1.333.131-1.824.328-.49.196-1.422.754-2.074 2.237-.652 1.482-.311 3.83-.067 4.56s.625 1.924 1.273 2.796c.576.984 1.34 1.667 1.659 1.899s1.219.386 1.843.067c.502-.308 1.408-.485 1.766-.472.357.013 1.061.154 1.782.539.571.197 1.111.115 1.652-.105.541-.221 1.324-1.059 2.238-2.758q.52-1.185.473-1.282" />
     </svg>
   );
 }

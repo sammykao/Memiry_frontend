@@ -12,7 +12,6 @@ export function SiteNavbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [spot, setSpot] = useState({ x: 120, y: 28 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 18);
@@ -29,13 +28,13 @@ export function SiteNavbar() {
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
       <div
-        className={`pointer-events-auto w-full max-w-6xl rounded-full border border-white/70 bg-white/62 px-3 py-2 shadow-[0_24px_80px_rgba(28,34,44,0.12)] backdrop-blur-2xl transition duration-300 ${
+        className={`pointer-events-auto w-full max-w-6xl rounded-[2rem] border border-white/70 bg-white/62 px-3 py-2 shadow-[0_24px_80px_rgba(28,34,44,0.12)] backdrop-blur-2xl transition duration-300 sm:rounded-full ${
           scrolled ? "max-w-5xl translate-y-1" : ""
         }`}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link
-            className="flex items-center gap-3 rounded-full px-3 py-2"
+            className="flex items-center gap-3 rounded-full px-2.5 py-2 sm:px-3"
             href="/"
           >
             <Image
@@ -46,31 +45,13 @@ export function SiteNavbar() {
               width={36}
             />
             <div className="hidden sm:block">
-              <p className="text-sm font-semibold tracking-[-0.03em] text-[var(--ink)]">
+              <p className="text-lg font-semibold tracking-[-0.03em] text-[var(--ink)]">
                 Memiry
-              </p>
-              <p className="text-xs uppercase tracking-[0.2em] text-stone-500">
-                iPhone app
               </p>
             </div>
           </Link>
 
-          <div
-            className="relative hidden flex-1 items-center justify-center md:flex"
-            onMouseMove={(event) => {
-              const rect = event.currentTarget.getBoundingClientRect();
-              setSpot({
-                x: event.clientX - rect.left,
-                y: event.clientY - rect.top,
-              });
-            }}
-          >
-            <div
-              className="pointer-events-none absolute inset-x-10 inset-y-1 rounded-full opacity-90"
-              style={{
-                background: `radial-gradient(140px circle at ${spot.x}px ${spot.y}px, rgba(120,188,138,0.32), transparent 75%)`,
-              }}
-            />
+          <div className="relative hidden flex-1 items-center justify-center md:flex">
             <nav className="relative flex items-center gap-1 rounded-full border border-white/75 bg-white/52 px-2 py-1.5">
               {navigationItems.map((item) => {
                 const active = item.href === activeHref;
@@ -99,7 +80,7 @@ export function SiteNavbar() {
           </div>
 
           <div className="ml-auto hidden md:block">
-            <AppStoreButton label="Download" subtle />
+            <AppStoreButton label="Get Memiry" subtle />
           </div>
 
           <button
@@ -141,7 +122,7 @@ export function SiteNavbar() {
                 ))}
               </nav>
               <div className="mt-3">
-                <AppStoreButton label="Download on the App Store" />
+                <AppStoreButton label="Get Memiry" />
               </div>
             </motion.div>
           ) : null}
